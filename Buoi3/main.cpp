@@ -74,13 +74,31 @@ void puppets() {
 		if(Q.front() + k<= x) Q.pop();
 	}
 	cout<<Q.size();
+}
 
+typedef pair<int, int> event;
+bool compare(event u, event v) {
+	return u.second<v.second;
+}
 
+void working() {
+	int n,res=0, t= -INT_MAX;
+	cin<<n;
+	event A[n];
+	for(auto &a:A) cin>>a.first>>a.second;
+	sort(A,A+n, compare );
+	for(auto a:A)
+		if(a.first > t) {
+			res++;
+			t=a.second;
+		}
+	cout<<res;
 }
 int main() {
 //	sortMoney();
 //	milking();
 //	dancing();
 //	puppets();
+	working();
 	return 0;
 }
