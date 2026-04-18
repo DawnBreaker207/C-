@@ -62,5 +62,5 @@ main() {
 //	tiling();
 //	stair();
 //	test();
-counting();
+	counting();
 }
